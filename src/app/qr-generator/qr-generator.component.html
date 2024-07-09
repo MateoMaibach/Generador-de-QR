@@ -1,0 +1,37 @@
+<header>
+  <div class="header-container">
+    <h1 class="header-title">Generador de Códigos QR</h1>
+  </div>
+</header>
+
+<body>
+  <div class="form-container">
+    <label for="url">Ingrese la URL:</label>
+    <input
+      type="text"
+      id="url"
+      [(ngModel)]="url"
+      placeholder="Ej. https://ejemplo.com"
+    />
+    <button (click)="generateQR()">Generar QR</button>
+  </div>
+
+  <div *ngIf="qrGenerated" class="qr-container">
+    <hr />
+    <h2 class="qr-title">Código QR generado:</h2>
+    <img [src]="qrCodeDataUrl" alt="QR Code" class="qr-image" />
+
+    <div class="download-button-container">
+      <button (click)="downloadQR()" class="download-button">
+        Descargar QR
+      </button>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <p>
+      Proyecto de codigo abierto desarrollado por Mateo Maibach <br />
+      &copy; 2024 Generador de Códigos QR.
+    </p>
+  </footer>
+</body>

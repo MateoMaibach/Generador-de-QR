@@ -1,19 +1,23 @@
-import { NgModule } from '@angular/core';
-import { BrowserModule, provideClientHydration } from '@angular/platform-browser';
 
-import { AppRoutingModule } from './app-routing.module';
+import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+
 import { AppComponent } from './app.component';
+import { QrGeneratorComponent } from './qr-generator/qr-generator.component';
+import { QrService } from './services/qr.service'; 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    QrGeneratorComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    FormsModule
   ],
   providers: [
-    provideClientHydration()
+    QrService 
   ],
   bootstrap: [AppComponent]
 })
